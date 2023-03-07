@@ -47,7 +47,7 @@ main .container {
 /* side-bar */
 .side-bar {
   height: 100%;
-  width: 300px;
+  min-width: 250px;
   background-color: black;
 }
 
