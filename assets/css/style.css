@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scrollbar-width: 200px;
 }
 
 body {
@@ -10,7 +11,64 @@ body {
 }
 
 
-/* MAIN */
+/* UTILITIES */
+.d-flex {
+  display: flex;
+}
 
+/* SCROLLBAR CUSTOMIZATION */
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: lightgray;
+  border-radius: 20px;
+  border: 4px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: gray;
+}
+
+
+/* MAIN */
+main .container {
+  height: calc(100vh - 80px);
+  background-color: #141922;
+  overflow-y: auto;
+}
+
+/* side-bar */
+.side-bar {
+  height: 100%;
+  width: 300px;
+  background-color: black;
+}
+
+/* main-content */
+.main-content {
+  width: 100%;
+}
+
+.main-content .content-header {
+  width: 100%;
+  height: 80px;
+  background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+
+/* BOTTOM BAR */
+
+.bottom-bar {
+  height: 80px;
+  background-color: #282828;
+}
 
 /* RESPONSIVE */
