@@ -3,12 +3,28 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scrollbar-width: 200px;
 }
 
 body {
   font-family: 'Montserrat', sans-serif;
   color: white;
+  font-weight: 600;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none; 
+}
+
+h3 {
+  font-size: 0.9rem;
 }
 
 
@@ -16,6 +32,7 @@ body {
 .d-flex {
   display: flex;
 }
+
 
 /* SCROLLBAR CUSTOMIZATION */
 ::-webkit-scrollbar {
@@ -40,7 +57,7 @@ body {
 
 /* MAIN */
 .general-container {
-  height: calc(100vh - 80px);
+  height: calc(100vh - 90px);
   background-color: #141922;
   overflow-y: auto;
 }
@@ -50,22 +67,155 @@ body {
   position: sticky;
   top: 0;
   left: 0;
+  flex-direction: column;
+  justify-content: space-between;
   height: 100%;
-  min-width: 250px;
+  min-width: 280px;
   background-color: black;
+  padding-top: 20px;
 }
 
-/* main-content */
+.side-bar a,
+.side-bar span {
+  font-size: 0.85rem;
+  color: gray;
+}
+
+.side-bar a {
+  display: flex;
+  align-items: center;
+  padding: 5px 20px;
+}
+
+.side-bar span:not(.add) {
+  margin-left: 5px;
+}
+
+.side-bar a:hover,
+.side-bar a:hover span,
+.side-bar ul li a.active,
+.side-bar ul li a.active span,
+.side-bar .playlist-top .add-playlist:hover span {
+  color: white;
+}
+
+.side-bar .install:hover a img,
+.side-bar .side-nav ul li a:hover img,
+.side-bar .side-nav ul li a.active img {
+  filter: invert(0);
+}
+
+.side-bar ul li a.active {
+  border-left: 3px solid #adff2f;
+  padding-left: 17px;
+}
+
+.side-bar .logo.desktop {
+  width: 160px;
+  margin: 0 20px;
+}
+
+.side-bar .logo.mobile {
+  width: 34px;
+  margin: 0 18px;
+  display: none;
+}
+
+.side-bar .side-nav {
+  margin: 16px 0 26px;
+}
+
+.side-bar .side-nav ul li img {
+  width: 30px;
+}
+
+.side-bar .side-nav ul li a img,
+.side-bar .install a img {
+  filter: invert(0.5);
+}
+
+.side-bar .playlist-top h3 {
+  padding: 0 20px;
+}
+
+.side-bar .playlist-top .add-playlist {
+  align-items: center;
+  padding: 0 20px;
+  margin: 15px 0;
+}
+
+.side-bar .playlist-top .add-playlist .add {
+  font-size: 2.6rem;
+  line-height: 24px;
+  color: black;
+  background-color: gray;
+  padding: 8px; 
+}
+
+.side-bar .playlist-top .add-playlist span:not(.add) {
+  margin-left: 10px;
+}
+
+.side-bar .playlist-top .add-playlist:hover {
+  cursor: pointer;
+}
+
+.side-bar .playlist-top .add-playlist:hover span.add {
+  color: black;
+  background-color: white;
+}
+
+.side-bar .playlist-bottom {
+  height: calc(100% - 94px);
+  overflow-y: auto;
+}
+
+.side-bar .playlist-bottom ul li a {
+  padding: 8px 20px;
+}
+
+.side-bar .side-bar-bottom {
+  padding: 16px 0;
+}
+
+.side-bar .install a {
+  padding-bottom: 10px;
+}
+
+.side-bar .install img {
+  width: 25px;
+}
+
+.side-bar .profile {
+  align-items: center;
+  border-top: 1px solid gray;
+  padding-top: 15px;
+  margin: 0 20px;
+}
+
+.side-bar .profile h3 {
+  margin-left: 10px;
+}
+
+.side-bar .profile img {
+  width: 28px;
+  height: 28px;
+  background-color: gray;
+  border-radius: 50%;
+}
+
+
+/* main-container */
 .main-contentiner {
   width: 100%;
 }
 
-.main-container .main-content-header {
+.main-container .top-bar {
   position: fixed;
   top: 0;
-  z-index: 10;
+  z-index: 99;
   width: 100%;
-  height: 80px;
+  height: 90px;
   background-color: rgba(0, 0, 0, 0.5); 
 }
 
@@ -78,9 +228,40 @@ body {
 
 .bottom-bar {
   position: sticky;
+  z-index: 999;
   bottom: 0;
-  height: 80px;
+  height: 90px;
   background-color: #282828;
 }
 
 /* RESPONSIVE */
+@media all and (max-width: 480px) {
+  .side-bar {
+    min-width: 0;
+  }
+  .side-bar .logo.mobile {
+    display: block;
+  }
+
+  .side-bar .logo.desktop {
+    display: none;
+  }
+  
+  .side-bar span,
+  .side-bar .profile h3 {
+    display: none;
+  }
+
+  .side-bar .side-nav ul li a.active {
+    border-left: 0;
+    padding-left: 20px;
+  }
+
+  .playlist {
+    display: none;
+  }
+
+  .side-bar .profile {
+    border-top: 0;
+  }
+}
