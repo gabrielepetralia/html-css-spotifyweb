@@ -15,16 +15,20 @@ img {
   max-width: 100%;
 }
 
+h2 {
+  font-size: 1.7rem;
+}
+
+h3 {
+  font-size: 0.9rem;
+}
+
 ul {
   list-style: none;
 }
 
 a {
   text-decoration: none; 
-}
-
-h3 {
-  font-size: 0.9rem;
 }
 
 
@@ -145,7 +149,7 @@ h3 {
 .side-bar .playlist-top .add-playlist {
   align-items: center;
   padding: 0 20px;
-  margin: 15px 0;
+  margin: 14px 0;
 }
 
 .side-bar .playlist-top .add-playlist .add {
@@ -192,7 +196,7 @@ h3 {
 .side-bar .profile {
   align-items: center;
   border-top: 1px solid gray;
-  padding-top: 15px;
+  padding-top: 14px;
   margin: 0 20px;
 }
 
@@ -279,17 +283,66 @@ h3 {
 }
 
 /* sections */
+.main-container section {
+  margin-bottom: 28px;
+}
+
 .main-container section .section-header {
-  padding: 10px 20px 30px;
+  padding: 20px;
+}
+
+.main-container section .section-header span {
+  display: inline-block;
+  margin-top: 10px;
 }
 
 .main-container section .col {
   width: calc(100% / 6);
-  padding: 8px;
-  /* debug */
-  height: 200px;
-  background-color: aquamarine;
-  border: 1px solid black;
+  padding: 20px;
+}
+
+.main-container .card:hover {
+  cursor: pointer;
+}
+
+.main-container .card-top {
+  position: relative;
+}
+
+.main-container .card-top i {
+  font-size: 3.6rem;
+  color: white;
+}
+
+.main-container .card-top .overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all 0.3s;
+}
+
+.main-container .card:hover .card-top .overlay {
+  opacity: 1;
+}
+
+.main-container .card-bottom {
+  text-align: center;
+}
+
+.main-container .card-bottom h3 {
+  color: white;
+  margin: 10px 0;
+}
+
+.main-container .artisti .card-top {
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 
@@ -310,7 +363,7 @@ h3 {
   }
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 900px) {
   .main-container section .col {
     width: 50%;
   }
