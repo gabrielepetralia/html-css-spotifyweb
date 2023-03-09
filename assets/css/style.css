@@ -16,7 +16,7 @@ img {
 }
 
 h2 {
-  font-size: 1.7rem;
+  font-size: 1.6rem;
 }
 
 h3 {
@@ -99,15 +99,15 @@ a {
   margin-left: 5px;
 }
 
-.side-bar a:hover,
-.side-bar a:hover span,
+.side-bar ul li a:hover,
+.side-bar .install:hover span,
+.side-bar .playlist-top .add-playlist:hover span,
 .side-bar ul li a.active,
-.side-bar ul li a.active span,
-.side-bar .playlist-top .add-playlist:hover span {
+.side-bar ul li a.active span {
   color: white;
 }
 
-.side-bar .install:hover a img,
+.side-bar .install:hover img,
 .side-bar .side-nav ul li a:hover img,
 .side-bar .side-nav ul li a.active img {
   filter: invert(0);
@@ -138,7 +138,7 @@ a {
 }
 
 .side-bar .side-nav ul li a img,
-.side-bar .install a img {
+.side-bar .install img {
   filter: invert(0.5);
 }
 
@@ -164,7 +164,8 @@ a {
   margin-left: 10px;
 }
 
-.side-bar .playlist-top .add-playlist:hover {
+.side-bar .playlist-top .add-playlist:hover,
+.side-bar .install:hover {
   cursor: pointer;
 }
 
@@ -183,25 +184,27 @@ a {
 
 .side-bar .side-bar-bottom {
   padding: 16px 0;
+  margin: 0 20px;
 }
 
-.side-bar .install a {
+.side-bar .install {
   padding-bottom: 10px;
+  border-bottom: 1px solid gray;
 }
 
 .side-bar .install img {
   width: 25px;
+  vertical-align: middle;
 }
 
 .side-bar .profile {
   align-items: center;
-  border-top: 1px solid gray;
-  padding-top: 14px;
-  margin: 0 20px;
+  margin-top: 14px;
 }
 
 .side-bar .profile h3 {
-  margin-left: 10px;
+  display: inline-block;
+  margin-left: 5px;
 }
 
 .side-bar .profile img {
@@ -209,6 +212,7 @@ a {
   height: 28px;
   background-color: gray;
   border-radius: 50%;
+  vertical-align: middle;
 }
 
 /* MAIN-CONTAINER */
@@ -239,6 +243,7 @@ a {
   border: 1px solid white;
   border-radius: 26px;
   margin-right: 26px;
+  transition: all 0.3s;
 }
 
 .main-container .top-bar .cta-btn:hover {
@@ -336,7 +341,6 @@ a {
 }
 
 .main-container .card-bottom h3 {
-  color: white;
   margin: 10px 0;
 }
 
@@ -399,9 +403,13 @@ a {
     display: none;
   }
 
-  .side-bar .profile {
-    border-top: 0;
+  .side-bar .side-bar-bottom {
     margin: 0 14px;
+  }
+
+  .side-bar .install {
+    padding-bottom: 0;
+    border-bottom: 0;
   }
 
   .main-container .top-bar {
